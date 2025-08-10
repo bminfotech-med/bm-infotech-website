@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bminfotech-med.github.io/bm-infotech-website/sitemap.xml
