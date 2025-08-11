@@ -51,5 +51,17 @@
         <p>&copy; 2025 BM&nbsp;Infotech. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- JavaScript fallback redirect. While the meta refresh tag above will
+         attempt to send visitors back to the home page, some browsers or
+         ad‑blockers may ignore meta refresh directives. This script waits
+         five seconds and then navigates to the home page. If the meta
+         redirect has already fired, this will simply change the location
+         a second time without any harm. -->
+    <script>
+      setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 5000);
+    </script>
   </body>
 </html>
