@@ -35,16 +35,35 @@
         </p>
         <!-- The form submits directly to FormSubmit.co, which will send the
              collected data to our email without requiring users to open
-             their own email client.  We disable CAPTCHA for a smoother
-             experience and redirect to a custom thank‑you page upon success. -->
+             their own email client. We include a custom thank‑you redirect
+             and request an automatic confirmation email to the address the
+             user provides.  FormSubmit's autoresponse feature requires
+             that the default reCAPTCHA is not disabled. -->
         <form id="registrationForm" action="https://formsubmit.co/inftechbm@gmail.com" method="POST">
-          <!-- Disable CAPTCHA challenge (optional) -->
-          <input type="hidden" name="_captcha" value="false" />
+
           <!-- Redirect to a thank you page after successful submission -->
           <input
             type="hidden"
             name="_next"
             value="https://bminfotech-med.github.io/bm-infotech-website/success.html"
+          />
+
+          <!-- Send an automatic confirmation email to the registrant. The
+               value of this field becomes the body of the autoresponse.
+               FormSubmit will send the autoresponse to the email provided
+               in the form's email field. -->
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thank you for registering with BM Infotech! Your submission has been received and we will contact you soon with more details."
+          />
+
+          <!-- Custom subject line for the email you receive and for the
+               autoresponse sent to the registrant. Adjust as needed. -->
+          <input
+            type="hidden"
+            name="_subject"
+            value="BM Infotech Registration Confirmation"
           />
           <div class="form-group">
             <label for="name">Full Name *</label>
