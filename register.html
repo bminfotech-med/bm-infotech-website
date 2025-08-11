@@ -39,7 +39,14 @@
              and request an automatic confirmation email to the address the
              user provides.  FormSubmit's autoresponse feature requires
              that the default reCAPTCHA is not disabled. -->
-        <form id="registrationForm" action="https://formsubmit.co/inftechbm@gmail.com" method="POST">
+        <!--
+          The form action includes a redirect query parameter. FormSubmit’s
+          documentation notes that adding `?redirect=<url>` to the action
+          will consistently send the user to a custom thank‑you page after
+          submission. This helps avoid cases where the `_next` hidden field
+          is ignored and FormSubmit falls back to its own thank‑you page.
+        -->
+        <form id="registrationForm" action="https://formsubmit.co/inftechbm@gmail.com?redirect=https://bminfotech-med.github.io/bm-infotech-website/success.html" method="POST">
 
           <!-- Redirect to a thank you page after successful submission -->
           <input
