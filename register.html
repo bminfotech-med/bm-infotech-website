@@ -33,7 +33,19 @@
           Complete the form below to register for one of our programs. Required
           fields are marked with an asterisk (*).
         </p>
-        <form id="registrationForm" onsubmit="submitForm(event)">
+        <!-- The form submits directly to FormSubmit.co, which will send the
+             collected data to our email without requiring users to open
+             their own email client.  We disable CAPTCHA for a smoother
+             experience and redirect to a custom thank‑you page upon success. -->
+        <form id="registrationForm" action="https://formsubmit.co/inftechbm@gmail.com" method="POST">
+          <!-- Disable CAPTCHA challenge (optional) -->
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Redirect to a thank you page after successful submission -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://bminfotech-med.github.io/bm-infotech-website/success.html"
+          />
           <div class="form-group">
             <label for="name">Full Name *</label>
             <input type="text" id="name" name="name" required />
@@ -68,9 +80,9 @@
           </div>
         </form>
         <p class="notice">
-          Upon submission, your email application will open automatically with
-          your details filled in. Please review and send the email to complete
-          registration.
+          After you click Submit, your information will be sent securely to us.
+          You will see a confirmation page when your registration has been
+          received. We will contact you soon with further details.
         </p>
       </div>
     </section>
